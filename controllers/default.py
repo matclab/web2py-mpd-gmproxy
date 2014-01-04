@@ -15,6 +15,7 @@ M3UPATH = '/home/music/'
 m3u = '%s%s' % (M3UPATH, M3UNAME)
 import httplib, urllib
 import subprocess
+import socket
 
 T.set_current_languages('en', 'en-en')
 
@@ -68,7 +69,11 @@ def result():
 
         reqstring = '/%s?%s' % (session.search, urllib.urlencode(args))
         conn = httplib.HTTPConnection(gmproxyserver)
-        conn.request("GET", reqstring)
+        try:
+            conn.request("GET", reqstring)
+        except socket.error as e:
+            session.flash = str(e)
+            redirect(URL('default', 'index'))
         r1 = conn.getresponse()
         print r1.status, r1.reason
         if r1.status == 200:
