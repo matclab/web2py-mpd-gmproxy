@@ -165,6 +165,7 @@
 'RAM Cache Keys': 'Clés de cache de la RAM',
 'Ram Cleared': 'Ram vidée',
 'Readme': 'Lisez-moi',
+'Recherche Google Play Music': 'Recherche Google Play Music',
 'Recipes': 'Recettes',
 'Record': 'enregistrement',
 'record does not exist': "l'archive n'existe pas",

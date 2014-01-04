@@ -84,7 +84,7 @@ def result():
                 url = res[i+1]
                 db.m3u.insert(url=url, extinf=extinf)
         conn.close()
-        grid = SQLFORM.grid(db.m3u, editable=False, details=False,
+        grid = SQLFORM.grid(db.m3u, editable=False, details=False, csv=False,
                 maxtextlength=120, paginate=2000,
                  selectable = lambda ids : redirect(URL('default', 'selected',
                      vars=dict(ids=ids))))
