@@ -1,0 +1,17 @@
+
+syntax: glob
+
+.*.sw[poqrst]
+*.orig
+*.rej
+*.back
+*~
+*.*~
+*bak
+\#*
+.\#*
+.DS_Store
+sessions/*
+databases/*
+errors/127.0.0*
+
