@@ -1,7 +1,10 @@
 # web2py-mpd-gmproxy #
-A [web2py](www.web2py.com/) interface to allow sarching [google
+A quick and probably dirty [web2py](www.web2py.com/) interface to allow searching [google
 music](https://music.google.com) and adding found songs to the current
 [MPD](www.musicpd.org) playlist.
+
+Licence : GPLv3 (Ask if other is needed).
+
 
 ## Usage ##
 
@@ -30,8 +33,16 @@ playlist by clicking on the *submit* button.
    [web2py](http://www.web2py.com/init/default/download) may be enough).
 2. Install *gmusicproxy* as explained on the [web
    site](http://gmusicproxy.net/#setup).
-3. `cd web2py/applications`
-4. Clone the *web2py-mpd-gmproxy* application: `hg clone https://bitbucket.org/matclab/web2py-mpd-gmproxy gmproxy` or `git clone https://github.com/matclab/web2py-mpd-gmproxy.git`
+3. `cd web2py/applications`.
+4. Clone the *web2py-mpd-gmproxy* application: `hg clone
+   https://bitbucket.org/matclab/web2py-mpd-gmproxy gmproxy` or `git clone
+   https://github.com/matclab/web2py-mpd-gmproxy.git`.
+5. `cp gmproxy/models/conf.py.sample  gmproxy/models/conf.py` and edit `gmproxy/models/conf.py` to match your configuration.
 5. Launch *gmusicproxy* and *web2py*. You may use the systemd services provided in the `systemd` directory as information on how to do it.
+
+## Thanks ##
+
+A lot of thanks to the authors of the great piece of software used by this
+application.
 
 [//]: # ( <script src="doc/jr.js"></script>)
