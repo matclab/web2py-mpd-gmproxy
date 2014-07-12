@@ -9,12 +9,12 @@ By pointing your web browser to the web2py application (http://localhost:777
 with the default configuration of the provided systemd service)/, you get the
 following form:
 
-![Request Form](./doc/form.png)
+![Request Form](https://bitbucket.org/repo/eA454g/images/2375866770-form.png)
 
 And after submitting a request, you get a result list looking like the
 following:
 
-![Results](./doc/results.png)
+![Results](https://bitbucket.org/repo/eA454g/images/1136661217-results.png)
 
 You then can select the songs you want and add them to the current *mpd*
 playlist by clicking on the *submit* button.
