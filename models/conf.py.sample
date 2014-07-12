@@ -1,0 +1,7 @@
+# gmusicproxy interface URL
+gmproxyserver = 'localhost:9999'
+# Name of the temp playlist file
+M3UNAME = '_tmp.m3u'
+# Directory where music is located as configured in MPD
+M3UPATH = '/home/music/'
+

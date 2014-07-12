@@ -9,9 +9,6 @@
 ## - call exposes all registered services (none by default)
 #########################################################################
 
-gmproxyserver = 'localhost:9999'
-M3UNAME = '_tmp.m3u'
-M3UPATH = '/home/music/'
 m3u = '%s%s' % (M3UPATH, M3UNAME)
 import httplib, urllib
 import subprocess
