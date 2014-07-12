@@ -21,19 +21,16 @@ T.set_current_languages('en', 'en-en')
 
 def index():
     """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
+   Build the search form and redirect to result().
     """
     form = SQLFORM.factory(
             Field('search',
                 requires=IS_IN_SET({'get_by_search':T('Standard'),
-                    'get_new_station_by_search':T('Radio')}, zero=None),
-                label=T('Radio or Standard'), default='get_by_search'),
+                    'get_new_station_by_search':T('Radio'),
+                    'get_ifl_station':T('I feel lucky')}, zero=None),
+                label=T('Radio, Standard, I feel Lucky'), default='get_by_search'),
         Field('searchtype', requires=IS_IN_SET({'artist':T('Artist'),
-                'album': T('Album')}, zero=None), 
+            'album': T('Album'), 'song': T('Song')}, zero=None), 
                 label=T('Search type'), default='artist'),
         Field('title', 'string', label=T('Title')),
         Field('artist', 'string', label=T('Artist')),
@@ -59,10 +56,11 @@ def result():
         db.m3u.truncate()
         args = []
         args.append(('type', session.searchtype))
-        if session.artist:
-            args.append(('artist', session.artist))
-        if session.title:
-            args.append(('title', session.title))
+        if session.search is not "get_ifl_station":
+            if session.artist:
+                args.append(('artist', session.artist))
+            if session.title:
+                args.append(('title', session.title))
         if session.num_tracks:
             args.append(('num_tracks', session.num_tracks))
 
