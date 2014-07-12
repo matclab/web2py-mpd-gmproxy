@@ -1,0 +1,17 @@
+# Adapt the USER and paths to your configuration and
+# copy this files in /etc/systemd/system/ and do :
+#    sudo systemctl gmproxygui enable
+#    sudo systemctl gmproxygui start
+[Unit]
+Description=Google music proxy service
+After=mpd.service
+
+[Service]
+Type=simple
+User=**USER**
+KillMode=process
+PIDFile=/home/**USER**/run/gmproxygui.pid
+ExecStart=/usr/bin/python2 /home/**USER**/web/web2py/web2py.py -a "<recycle>" --interfaces "127.0.0.1:777;192.168.0.3:777" --nogui  -s camel --pid_filename=/home/**USER**/run/gmproxygui.pid --log_filename=/tmp/gmproxygui.log
+
+[Install]
+WantedBy=default.target

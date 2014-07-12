@@ -1,0 +1,16 @@
+# Adapt the USER and paths to your configuration and
+# copy this files in /etc/systemd/system/ and do :
+#    sudo systemctl gmusicproxy enable
+#    sudo systemctl gmusicproxy start
+[Unit]
+Description=Google music proxy service
+After=mpd.service
+
+[Service]
+Type=simple
+User=**USER**
+KillMode=process
+ExecStart=/home/**USER**/bin/GMusicProxy  --daemon
+
+[Install]
+WantedBy=default.target
