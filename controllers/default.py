@@ -27,7 +27,7 @@ def index():
                     'get_ifl_station':T('I feel lucky')}, zero=None),
                 label=T('Radio, Standard, I feel Lucky'), default='get_by_search'),
         Field('searchtype', requires=IS_IN_SET({'artist':T('Artist'),
-            'album': T('Album'), 'song': T('Song')}, zero=None), 
+            'album': T('Album'), 'matches': T('Song')}, zero=None), 
                 label=T('Search type'), default='artist'),
         Field('title', 'string', label=T('Title')),
         Field('artist', 'string', label=T('Artist')),
@@ -73,11 +73,17 @@ def result():
         print r1.status, r1.reason
         if r1.status == 200:
             res = r1.read().split('\n')[1:]
+            print res
             for i in range(0, len(res)-1, 2):
-                #print res[i]
+                print res[i]
                 extinf = res[i].split(',', 1)[1]
+                author, rest = extinf.split(' - ', 1)
+                rest =  rest.split(' - ')
+                album = rest[-1]
+                title = " - ".join(rest[0:-1])
                 url = res[i+1]
-                db.m3u.insert(url=url, extinf=extinf)
+                db.m3u.insert(url=url, author=author, title=title,
+                        album=album)
         conn.close()
         grid = SQLFORM.grid(db.m3u, editable=False, details=False, csv=False,
                 maxtextlength=120, paginate=2000,

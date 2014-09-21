@@ -27,6 +27,7 @@
 'Are you sure you want to delete this object?': 'Êtes-vous sûr de vouloir supprimer cet objet?',
 'Artist': 'Artiste',
 'Authentication': 'Authentification',
+'Author': 'Author',
 'Available Databases and Tables': 'Bases de données et tables disponibles',
 'Back': 'Back',
 'Buy this book': 'Acheter ce livre',

@@ -38,7 +38,7 @@ playlist by clicking on the *submit* button.
    https://bitbucket.org/matclab/web2py-mpd-gmproxy gmproxy` or `git clone
    https://github.com/matclab/web2py-mpd-gmproxy.git`.
 5. `cp gmproxy/models/conf.py.sample  gmproxy/models/conf.py` and edit `gmproxy/models/conf.py` to match your configuration.
-5. Launch *gmusicproxy* and *web2py*. You may use the systemd services provided in the `systemd` directory as information on how to do it.
+5. Launch *gmusicproxy* (with  `--extended-m3u` option) and *web2py*. You may use the systemd services provided in the `systemd` directory as information on how to do it.
 
 ## Thanks ##
 

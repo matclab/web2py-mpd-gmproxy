@@ -10,7 +10,7 @@ After=mpd.service
 Type=simple
 User=**USER**
 KillMode=process
-ExecStart=/home/**USER**/bin/GMusicProxy  --daemon
+ExecStart=/home/**USER**/bin/GMusicProxy  --daemon --extended-m3u
 
 [Install]
 WantedBy=default.target
