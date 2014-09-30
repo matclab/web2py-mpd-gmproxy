@@ -70,10 +70,10 @@ def result():
             session.flash = str(e)
             redirect(URL('default', 'index'))
         r1 = conn.getresponse()
-        print r1.status, r1.reason
+        #print r1.status, r1.reason
         if r1.status == 200:
             res = r1.read().split('\n')[1:]
-            print res
+            #print res
             for i in range(0, len(res)-1, 2):
                 print res[i]
                 extinf = res[i].split(',', 1)[1]
@@ -83,7 +83,7 @@ def result():
                 title = " - ".join(rest[0:-1])
                 url = res[i+1]
                 db.m3u.insert(url=url, author=author, title=title,
-                        album=album)
+                        album=album, extinf=extinf)
         conn.close()
         grid = SQLFORM.grid(db.m3u, editable=False, details=False, csv=False,
                 maxtextlength=120, paginate=2000,

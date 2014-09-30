@@ -81,6 +81,7 @@ crud, service, plugins = Crud(db), Service(), PluginManager()
 #########################################################################
 db.define_table('m3u', 
                 Field('url', 'string', readable=False, writable=False),
+                Field('extinf', 'string', readable=False, writable=False),
                 Field('author', 'string', label='Author', readable=True, writable=False),
                 Field('title', 'string', label='Title', readable=True, writable=False),
                 Field('album', 'string', label='Album', readable=True, writable=False),
